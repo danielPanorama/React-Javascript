@@ -46,6 +46,8 @@ const pieData = [
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
+const response = await axios.get('https://backend.danielladd1.repl.co/api/data');
+
 const Dashboard = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue('white', 'gray.800');
@@ -103,7 +105,7 @@ const Dashboard = () => {
               borderWidth="1px"
             >
               <Heading as="h2" size="lg" mb={4} textColor={textColor}>
-                Portfolio Performance
+                response
               </Heading>
               {/* Line chart */}
               <LineChart width={400} height={300} data={data}>
